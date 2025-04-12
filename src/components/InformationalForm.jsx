@@ -97,20 +97,32 @@ const InformationalForm = () => {
     );
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    
-    try {
-      const submissionData = {
-        ...formData,
-        pageCost: formData.pageCost || 0,
-        totalCost: calculateTotalCost()
-      };
+ // Add this to your form submission handler
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmitting(true);
+  
+  try {
+    const submissionData = {
+      ...formData,
+      pageCost: formData.pageCost || 0,
+      totalCost: calculateTotalCost()
+    };
 
-      await axios.post('http://localhost:5000/api/quotes/informational', submissionData);
+    const response = await axios.post(
+      'https://server-bm.onrender.com/api/quotes/informational', 
+      submissionData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    );
+
+    if (response.status === 201) {
       toast.success('Quote submitted successfully!');
-      
+      // Reset form
       setFormData({
         websiteName: '',
         fullName: '',
@@ -137,13 +149,21 @@ const InformationalForm = () => {
         professionalEmails: 0,
         message: '',
       });
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast.error(`Error submitting quote: ${error.response?.data?.error || error.message}`);
-    } finally {
-      setSubmitting(false);
     }
-  };
+  } catch (error) {
+    console.error('Submission error:', error);
+    let errorMessage = 'Error submitting quote';
+    if (error.response) {
+      errorMessage = error.response.data.error || 
+                   error.response.data.message || 
+                   error.response.data.details || 
+                   errorMessage;
+    }
+    toast.error(errorMessage);
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>

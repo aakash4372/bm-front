@@ -43,7 +43,7 @@ const EcommerceForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/quotes/ecommerce', formData)
+      await axios.post('https://server-bm.onrender.com/api/quotes/ecommerce', formData)
       toast.success('Quote submitted successfully!')
       setFormData({
         websiteName: '',
