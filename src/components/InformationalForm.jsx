@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import './style.css';
 
 const InformationalForm = () => {
   const [formData, setFormData] = useState({
@@ -166,7 +167,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }} className='two-field-row'>
       <Grid container spacing={2}>
         {/* Basic Information */}
         <Grid item xs={12} sm={6}>

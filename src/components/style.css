@@ -1,0 +1,144 @@
+/* style.css */
+
+/* Base Styles */
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Form Elements */
+  .MuiTextField-root,
+  .MuiFormControl-root {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .MuiInputBase-root {
+    border-radius: 8px !important;
+  }
+  
+  .MuiOutlinedInput-root {
+    background-color: #f9fafb;
+  }
+  
+  .MuiOutlinedInput-input {
+    padding: 14px !important;
+  }
+  
+  .MuiInputLabel-root {
+    transform: translate(14px, 14px) scale(1);
+  }
+  
+  .MuiInputLabel-shrink {
+    transform: translate(14px, -6px) scale(0.75);
+  }
+  
+  /* Buttons */
+  .MuiButton-contained {
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .MuiButton-contained:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .MuiButton-containedPrimary {
+    background: linear-gradient(135deg, #3f51b5, #2196f3) !important;
+  }
+  
+  .MuiButton-outlined {
+    border-width: 2px !important;
+  }
+  
+  /* Radio Buttons & Checkboxes */
+  .MuiRadio-root,
+  .MuiCheckbox-root {
+    padding: 8px !important;
+  }
+  
+  .MuiFormControlLabel-label {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Select Dropdowns */
+  .MuiSelect-select {
+    width: 150px !important;
+  }
+  
+  /* Number Input Steppers */
+  .MuiInputAdornment-root {
+    margin-right: -8px !important;
+  }
+  
+  .MuiIconButton-root {
+    padding: 8px !important;
+  }
+  
+  /* File Upload Button */
+  .file-upload-button {
+    border: 2px dashed #e0e0e0 !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .file-upload-button:hover {
+    border-color: #3f51b5 !important;
+    background-color: rgba(63, 81, 181, 0.04) !important;
+  }
+  
+  /* Cost Display */
+  .cost-display {
+    background-color: #f5f7fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  .cost-display h6 {
+    color: #3f51b5;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .cost-display .caption {
+    color: #64748b;
+  }
+  
+  /* Divider */
+  .MuiDivider-root {
+    margin: 1.5rem 0 !important;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
+    .form-container {
+      padding: 1.5rem;
+    }
+    
+    .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+      padding: 8px !important;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 1rem;
+    }
+    
+    .MuiFormControlLabel-root {
+      margin-left: -8px !important;
+      margin-right: 0 !important;
+    }
+    
+    .MuiRadioGroup-root {
+      flex-direction: column !important;
+    }
+  }
